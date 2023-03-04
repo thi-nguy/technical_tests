@@ -1,10 +1,22 @@
-import './App.css'
+import Box from "@mui/material/Box";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import ButtonAppBar from "./ButtonAppBar";
+import LeaderBoard from "./Leaderboard";
+import NotFound from "./NotFound";
+import Schedule from "./Schedule";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Web store application</h1>
-    </div>
+    <Box>
+      <ButtonAppBar />
+      <Routes>
+        <Route path="/" element={<Schedule />} />
+        <Route path="/schedule" element={<Schedule />} />
+        <Route path="/leaderboard" element={<LeaderBoard />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Box>
   );
 }
 
